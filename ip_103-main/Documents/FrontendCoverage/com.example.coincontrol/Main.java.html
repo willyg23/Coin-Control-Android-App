@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.coincontrol</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package com.example.coincontrol;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import android.widget.AdapterView;
+import android.widget.Toast;
+
+import com.example.coincontrol.api.ApiClientFactory;
+import com.example.coincontrol.api.UserApi;
+import com.example.coincontrol.model.User;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+<span class="fc" id="L24">public class Main extends AppCompatActivity</span>
+        implements BottomNavigationView
+        .OnNavigationItemSelectedListener {
+
+    BottomNavigationView bottomNavigationView;
+    private int userID;
+    private String username;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+<span class="fc" id="L35">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L36">        setContentView(R.layout.activity_main);</span>
+
+<span class="fc" id="L38">        bottomNavigationView</span>
+<span class="fc" id="L39">                = findViewById(R.id.bottomNavigationView);</span>
+<span class="fc" id="L40">        bottomNavigationView</span>
+<span class="fc" id="L41">                .setOnNavigationItemSelectedListener(this);</span>
+<span class="fc" id="L42">        bottomNavigationView.setSelectedItemId(R.id.homeFragment);</span>
+<span class="fc" id="L43">        Intent intent = getIntent();</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (intent.hasExtra(&quot;userID&quot;))</span>
+        {
+<span class="fc" id="L46">            userID = Integer.parseInt(intent.getStringExtra(&quot;userID&quot;));</span>
+        }
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        if (intent.hasExtra(&quot;userID2&quot;))</span>
+        {
+<span class="nc" id="L50">            userID = Integer.parseInt(intent.getStringExtra(&quot;userID2&quot;));</span>
+        }
+
+<span class="fc" id="L53">    }</span>
+<span class="fc" id="L54">    YearlyReport yearlyReport = new YearlyReport();</span>
+<span class="fc" id="L55">    Chat chat = new Chat();</span>
+<span class="fc" id="L56">    Questions questions = new Questions();</span>
+<span class="fc" id="L57">    AccountInfo accountInfo = new AccountInfo();</span>
+<span class="fc" id="L58">    Home home = new Home();</span>
+
+    @Override
+    public boolean
+    onNavigationItemSelected(@NonNull MenuItem item) {
+<span class="fc" id="L63">        int itemId = item.getItemId();</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (itemId == R.id.yearlyReportFragment) {</span>
+<span class="fc" id="L65">            getSupportFragmentManager()</span>
+<span class="fc" id="L66">                    .beginTransaction()</span>
+<span class="fc" id="L67">                    .replace(R.id.frame_layout, yearlyReport)</span>
+<span class="fc" id="L68">                    .commit();</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        } else if (itemId == R.id.chatFragment) {</span>
+<span class="fc" id="L70">            getSupportFragmentManager()</span>
+<span class="fc" id="L71">                    .beginTransaction()</span>
+<span class="fc" id="L72">                    .replace(R.id.frame_layout, chat)</span>
+<span class="fc" id="L73">                    .commit();</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        } else if (itemId == R.id.homeFragment) {</span>
+<span class="fc" id="L75">            getSupportFragmentManager()</span>
+<span class="fc" id="L76">                    .beginTransaction()</span>
+<span class="fc" id="L77">                    .replace(R.id.frame_layout, home)</span>
+<span class="fc" id="L78">                    .commit();</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        } else if (itemId == R.id.questionsFragment) {</span>
+<span class="fc" id="L80">            getSupportFragmentManager()</span>
+<span class="fc" id="L81">                    .beginTransaction()</span>
+<span class="fc" id="L82">                    .replace(R.id.frame_layout, questions)</span>
+<span class="fc" id="L83">                    .commit();</span>
+        }
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">        else if (itemId == R.id.accountInfoFragment) {</span>
+<span class="fc" id="L86">            getSupportFragmentManager()</span>
+<span class="fc" id="L87">                    .beginTransaction()</span>
+<span class="fc" id="L88">                    .replace(R.id.frame_layout, accountInfo)</span>
+<span class="fc" id="L89">                    .commit();</span>
+        }
+<span class="fc" id="L91">        return false;</span>
+    }
+
+    public String getDataFromIntent()
+    {
+<span class="fc" id="L96">        UserApi userApi = ApiClientFactory.GetApiClientSeed().create(UserApi.class);</span>
+<span class="fc" id="L97">        Call&lt;String&gt; call = userApi.GetUsernameByID(userID);</span>
+<span class="fc" id="L98">        call.enqueue(new Callback&lt;String&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;String&gt; call, Response&lt;String&gt; response)
+            {
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">                if (response.isSuccessful())</span>
+                {
+<span class="fc" id="L104">                    username = response.body();</span>
+                }
+<span class="fc" id="L106">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;String&gt; call, Throwable t)
+            {
+<span class="nc" id="L111">                Log.e(&quot;USERNAME FAIL&quot;, t.getMessage());</span>
+<span class="nc" id="L112">            }</span>
+        });
+<span class="fc" id="L114">        return username;</span>
+    }
+
+    public int getUserIDFromIntent()
+    {
+<span class="fc" id="L119">        return userID;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>Generated by the Android Gradle plugin 8.1.1</div></body></html>

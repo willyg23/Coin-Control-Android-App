@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>suveryInfo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.coincontrol</a> &gt; <span class="el_source">suveryInfo.java</span></div><h1>suveryInfo.java</h1><pre class="source lang-java linenums">package com.example.coincontrol;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.coincontrol.api.ApiClientFactory;
+import com.example.coincontrol.api.GoalsApi;
+import com.example.coincontrol.model.Goals;
+import com.example.coincontrol.model.User;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+<span class="fc" id="L25">public class suveryInfo extends AppCompatActivity {</span>
+
+<span class="fc" id="L27">    String[] item = {&quot;26 Weeks&quot;, &quot;52 Weeks&quot;};</span>
+    AutoCompleteTextView autoCompleteTextView;
+    Button sixMonthsButton;
+    Button oneYearButton;
+    Button submitButton;
+    int id;
+
+    User user;
+    int timeEstimate;
+    EditText monthlyIncome;
+    EditText currentBankBalance;
+    EditText desiredBankBalance;
+<span class="fc" id="L39">    int numberOfMonths = 0;</span>
+    private int userID;
+    ArrayAdapter&lt;String&gt; adapterItems;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L44">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L45">        setContentView(R.layout.activity_survey_info);</span>
+<span class="fc" id="L46">        Goals submitGoal = new Goals();</span>
+        // where to get all of the values to set the attributes of submitGoal?
+
+        //firstName = findViewById(R.id.firstNameTxtCAP);
+        //sets firstName to the value inside the editTextBox firstNameTxtCAP
+
+<span class="fc" id="L52">        monthlyIncome = findViewById(R.id.monthlyIncomeInput);</span>
+<span class="fc" id="L53">        currentBankBalance = findViewById(R.id.currentBalanceInput);</span>
+<span class="fc" id="L54">        desiredBankBalance = findViewById(R.id.desiredBalanceInput);</span>
+
+<span class="fc" id="L56">        sixMonthsButton = findViewById(R.id.sixMonthsButton);</span>
+<span class="fc" id="L57">        oneYearButton = findViewById(R.id.oneYearButton);</span>
+<span class="fc" id="L58">        submitButton = findViewById(R.id.submitSurveyInfoButton);</span>
+
+
+<span class="fc" id="L61">        sixMonthsButton.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="nc" id="L64">                numberOfMonths = 26;</span>
+<span class="nc" id="L65">                Toast.makeText(suveryInfo.this,&quot;Selected 6 months&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L66">            }</span>
+
+        });
+
+<span class="fc" id="L70">        oneYearButton.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="nc" id="L73">                numberOfMonths = 52;</span>
+<span class="nc" id="L74">                Toast.makeText(suveryInfo.this,&quot;Selected 1 year&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L75">            }</span>
+        });
+
+<span class="fc" id="L78">        submitButton.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+                //Call&lt;Integer&gt; call = GoalsApi.P
+
+                //sets a string equal to to the value inside firstName, which is the value inisde the firstName editTextBox
+                //String firstNameTxt = firstName.getText().toString();
+<span class="nc" id="L85">                double monthlyIncomeInput = Double.parseDouble(monthlyIncome.getText().toString());</span>
+<span class="nc" id="L86">                double currentBankBalanceInput = Double.parseDouble(currentBankBalance.getText().toString());</span>
+<span class="nc" id="L87">                double desiredBankBalanceInput = Double.parseDouble(desiredBankBalance.getText().toString());</span>
+
+<span class="nc" id="L89">                Goals goalForCall = new Goals();</span>
+<span class="nc" id="L90">                goalForCall.setTimeEstimate(numberOfMonths);</span>
+<span class="nc" id="L91">                goalForCall.setMonthlyIncome(monthlyIncomeInput);</span>
+<span class="nc" id="L92">                goalForCall.setCurrentBankBalance(currentBankBalanceInput);</span>
+<span class="nc" id="L93">                goalForCall.setDesiredBankBalance(desiredBankBalanceInput);</span>
+
+                //Call&lt;Integer&gt; call = ApiClientFactory.GetUserApi().PostRegisterUser(user);
+<span class="nc" id="L96">                GoalsApi goalsApi = ApiClientFactory.GetApiClientSeed().create(GoalsApi.class);</span>
+<span class="nc" id="L97">                Call&lt;Integer&gt; call = goalsApi.PostGoals(goalForCall);</span>
+<span class="nc" id="L98">                call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="nc bnc" id="L101" title="All 2 branches missed.">                        if(response.isSuccessful()){</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">                            if(response.body() &gt;= 1)</span>
+                            {
+<span class="nc" id="L104">                                userID = response.body();</span>
+<span class="nc" id="L105">                                Toast.makeText(suveryInfo.this,&quot;Submission Successful!&quot;,Toast.LENGTH_LONG).show();</span>
+
+<span class="nc" id="L107">                                Intent intent2 = new Intent(suveryInfo.this, Main.class);</span>
+<span class="nc" id="L108">                                intent2.putExtra(&quot;userID2&quot;, Integer.toString(userID));</span>
+<span class="nc" id="L109">                                startActivity(intent2);</span>
+                            }
+                        }
+<span class="nc" id="L112">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t)
+                    {
+<span class="nc" id="L117">                        Toast.makeText(suveryInfo.this,&quot;Error in submitting&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L118">                        Log.e(&quot;SURVEY INFO&quot;, t.getMessage());</span>
+<span class="nc" id="L119">                    }</span>
+                });
+<span class="nc" id="L121">            }</span>
+        });
+<span class="fc" id="L123">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>Generated by the Android Gradle plugin 8.1.1</div></body></html>

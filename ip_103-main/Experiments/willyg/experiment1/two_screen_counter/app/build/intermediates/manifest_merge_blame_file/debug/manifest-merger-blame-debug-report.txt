@@ -1,0 +1,61 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.as1"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10
+11    <application
+11-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:5:5-27:19
+12        android:allowBackup="true"
+12-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.5.0] C:\Users\grine\.gradle\caches\transforms-3\48bd5157a68eef2b67cf5d91a668feec\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:extractNativeLibs="true"
+16        android:icon="@mipmap/ic_launcher"
+16-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:7:9-43
+17        android:label="@string/app_name"
+17-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:8:9-41
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:9:9-54
+19        android:supportsRtl="true"
+19-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:10:9-35
+20        android:testOnly="true"
+21        android:theme="@style/Theme.AS1" >
+21-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:11:9-41
+22        <activity
+22-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:12:9-14:40
+23            android:name="com.example.as1.Activity2"
+23-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:13:13-38
+24            android:exported="false" />
+24-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:14:13-37
+25        <activity
+25-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:15:9-17:39
+26            android:name="com.example.as1.CounterActivity"
+26-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:16:13-44
+27            android:exported="true" />
+27-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:17:13-36
+28        <activity
+28-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:18:9-26:20
+29            android:name="com.example.as1.MainActivity"
+29-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:19:13-41
+30            android:exported="true" >
+30-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:20:13-36
+31            <intent-filter>
+31-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:21:13-25:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:22:17-69
+32-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:22:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:24:17-77
+34-->C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:24:27-74
+35            </intent-filter>
+36        </activity>
+37    </application>
+38
+39</manifest>

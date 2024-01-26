@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountInfo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.coincontrol</a> &gt; <span class="el_source">AccountInfo.java</span></div><h1>AccountInfo.java</h1><pre class="source lang-java linenums">package com.example.coincontrol;
+
+import androidx.fragment.app.Fragment;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.coincontrol.api.ApiClientFactory;
+import com.example.coincontrol.api.UserApi;
+import com.example.coincontrol.model.User;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+<span class="fc" id="L24">public class AccountInfo extends Fragment {</span>
+
+    private String username;
+    private int userID;
+
+    private Button editUsernameButton;
+    private Button editPasswordButton;
+    private Button editEmailButton;
+    private Button logOutButton;
+
+
+    private EditText editTextUsername;
+    private EditText password;
+    private EditText email;
+
+    private TextView currentUsername;
+    private TextView currentPassword;
+    private TextView currentEmail;
+    private TextView yourNameTextView;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the fragment's layout XML file
+<span class="fc" id="L46">        View view = inflater.inflate(R.layout.fragment_account_info, container, false);</span>
+        // code here
+<span class="fc" id="L48">        Main main = (Main) getActivity();</span>
+//        username = main.getDataFromIntent();
+<span class="fc" id="L50">        userID = main.getUserIDFromIntent();</span>
+
+<span class="fc" id="L52">        yourNameTextView = view.findViewById(R.id.yourNameTextView);</span>
+<span class="fc" id="L53">        editUsernameButton = view.findViewById(R.id.usernameButton);</span>
+<span class="fc" id="L54">        editEmailButton = view.findViewById(R.id.emailButton);</span>
+<span class="fc" id="L55">        editPasswordButton = view.findViewById(R.id.passwordButton);</span>
+<span class="fc" id="L56">        logOutButton = view.findViewById(R.id.logOutButton);</span>
+
+<span class="fc" id="L58">        editTextUsername = view.findViewById(R.id.usernameEditText);</span>
+<span class="fc" id="L59">        password = view.findViewById(R.id.passwordEditText);</span>
+<span class="fc" id="L60">        email = view.findViewById(R.id.emailEditText);</span>
+
+<span class="fc" id="L62">        currentUsername = view.findViewById(R.id.currentUsernameTextView);</span>
+<span class="fc" id="L63">        currentPassword = view.findViewById(R.id.currentPasswordTextView);</span>
+<span class="fc" id="L64">        currentEmail = view.findViewById(R.id.currentEmailTextView);</span>
+
+<span class="fc" id="L66">        UserApi userApi = ApiClientFactory.GetApiClientSeed().create(UserApi.class);</span>
+<span class="fc" id="L67">        Call&lt;User&gt; getUserCall= userApi.GetUserByID(userID);</span>
+
+<span class="fc" id="L69">        getUserCall.enqueue(new Callback&lt;User&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;User&gt; call, Response&lt;User&gt; response) {
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">                if(response.isSuccessful()){</span>
+                    //set the currentUsername or currentUsername hint to the username
+                    //same for password
+                    //same for email
+                    //currentUsername.setText(response.body());
+<span class="fc" id="L77">                    User user = new User();</span>
+<span class="fc" id="L78">                    user = response.body();</span>
+<span class="fc" id="L79">                    username = user.getUsername();</span>
+
+<span class="fc" id="L81">                    yourNameTextView.setText(user.getFirstName() + &quot; &quot; + user.getLastName());</span>
+<span class="fc" id="L82">                    currentUsername.setText(user.getUserName());</span>
+<span class="fc" id="L83">                    currentPassword.setText(user.getPassword());</span>
+<span class="fc" id="L84">                    currentEmail.setText(user.getEmail());</span>
+                }
+<span class="fc" id="L86">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;User&gt; call, Throwable t) {
+<span class="nc" id="L90">                Toast.makeText(getActivity(),&quot;Current user not obtained&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L91">            }</span>
+        });
+
+<span class="fc" id="L94">        editUsernameButton.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="fc" id="L97">                String usernameInput = editTextUsername.getText().toString();</span>
+<span class="fc" id="L98">                UserApi userApi = ApiClientFactory.GetApiClientSeed().create(UserApi.class);</span>
+<span class="fc" id="L99">                Call&lt;Integer&gt; usernameCall = userApi.ChangeUsername(usernameInput, username);</span>
+                // check drew's updated code to make sure these aren't flip flopped^
+<span class="fc" id="L101">                usernameCall.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">                        if(response.isSuccessful()){</span>
+<span class="pc bpc" id="L105" title="1 of 2 branches missed.">                            if(response.body() == 5)</span>
+                            {
+<span class="fc" id="L107">                                Toast.makeText(getActivity(),&quot;Username changed successfully&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="fc" id="L108">                                currentUsername.setText(usernameInput);</span>
+<span class="fc" id="L109">                                username = usernameInput;</span>
+                            }
+                        }
+<span class="fc" id="L112">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L116">                        Log.e(&quot;UPDATE USERNAME&quot;, t.getMessage());</span>
+<span class="nc" id="L117">                        Toast.makeText(getActivity(),&quot;Response failed&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L118">                    }</span>
+                });
+<span class="fc" id="L120">            }</span>
+        });
+
+<span class="fc" id="L123">        editPasswordButton.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="fc" id="L126">                String passwordInput = password.getText().toString();</span>
+<span class="fc" id="L127">                UserApi userApi = ApiClientFactory.GetApiClientSeed().create(UserApi.class);</span>
+<span class="fc" id="L128">                Call&lt;Integer&gt; passwordCall = userApi.ChangePassword(username, passwordInput);</span>
+<span class="fc" id="L129">                passwordCall.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="pc bpc" id="L132" title="1 of 2 branches missed.">                        if(response.isSuccessful()){</span>
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">                            if(response.body() == 6)</span>
+                            {
+<span class="fc" id="L135">                                Toast.makeText(getActivity(),&quot;Password changed successfully&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="fc" id="L136">                                currentPassword.setText(passwordInput);</span>
+                            }
+                        }
+<span class="fc" id="L139">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L143">                        Toast.makeText(getActivity(),&quot;Response failed&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L144">                    }</span>
+                });
+<span class="fc" id="L146">            }</span>
+        });
+<span class="fc" id="L148">        editEmailButton.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="fc" id="L151">                String emailInput = email.getText().toString();</span>
+<span class="fc" id="L152">                UserApi userApi = ApiClientFactory.GetApiClientSeed().create(UserApi.class);</span>
+<span class="fc" id="L153">                Call&lt;Integer&gt; emailCall = userApi.ChangeEmail(username, emailInput);</span>
+<span class="fc" id="L154">                emailCall.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="pc bpc" id="L157" title="1 of 2 branches missed.">                        if(response.isSuccessful()){</span>
+<span class="pc bpc" id="L158" title="1 of 2 branches missed.">                            if(response.body() == 7)</span>
+                            {
+<span class="fc" id="L160">                                Toast.makeText(getActivity(),&quot;Successfully changed email.&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="fc" id="L161">                                currentEmail.setText(emailInput);</span>
+                            }
+                        }
+<span class="fc" id="L164">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L168">                        Toast.makeText(getActivity(),&quot;Response failed&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L169">                        Log.e(&quot;ACCOUNT ERROR&quot;, t.getMessage());</span>
+<span class="nc" id="L170">                    }</span>
+                });
+<span class="fc" id="L172">            }</span>
+        });
+
+<span class="fc" id="L175">        logOutButton.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v)
+            {
+<span class="fc" id="L179">                Intent intent = new Intent(getActivity(), Login.class);</span>
+<span class="fc" id="L180">                startActivity(intent);</span>
+<span class="fc" id="L181">            }</span>
+        });
+
+        // code above
+<span class="fc" id="L185">        return view;</span>
+        //return inflater.inflate(R.layout.fragment_account_info, container, false);
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>Generated by the Android Gradle plugin 8.1.1</div></body></html>

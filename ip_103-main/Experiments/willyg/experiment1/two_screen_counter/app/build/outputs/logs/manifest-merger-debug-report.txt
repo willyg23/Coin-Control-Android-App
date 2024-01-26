@@ -1,0 +1,183 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:2:1-29:12
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\grine\.gradle\caches\transforms-3\368db397c8ede8bd40c3eaf441c03e12\transformed\material-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\5919d6f3b072c353787092a577509d9d\transformed\constraintlayout-2.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\grine\.gradle\caches\transforms-3\3f4136122474e4829de0d1a36888a144\transformed\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\c505788411d3b30a833a10b1e5489e6f\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\grine\.gradle\caches\transforms-3\1aa7a1b850fe86da83affab0055974f1\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\grine\.gradle\caches\transforms-3\66192654c335d75151b9541027e1a8e6\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\grine\.gradle\caches\transforms-3\7fc1668234d1683a360a8a7ec547c401\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\09f9107f2fe6a89f47698b105045256b\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\539cac160dcd70d8f998164b92baf441\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\33a74b882badc2c0dc115e74b7441e9a\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\grine\.gradle\caches\transforms-3\ec9f65414c323ae50ef51f0a946a84e9\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\deb2286bc1b569c4f031eb37823c59d4\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\88e2c72b6aa7da3f71bd21d6634b7af5\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\e5942cb19c3823dc395d6ba9bc3405a9\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\17ace872848aaa1f84643ab4122b355b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\dc9115a6ef418e2dcb4eb137d69609b8\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\5b74c0ab3b0d8fd82db672a9c1079b20\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\2dd08da718f8f8f07fa372199e4680dc\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.5.0] C:\Users\grine\.gradle\caches\transforms-3\48bd5157a68eef2b67cf5d91a668feec\transformed\core-1.5.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\da016614a09e9e778625eff0413090c8\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\529ca1e93db3ee10a013710a9c19aca2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\a3748809c5b2bef9dff497c2ec4ca2d7\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\7e23e6ea4c377c23486cddaf23583ed0\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\eb5bb9c2937f508c9ffbd0b0f9469447\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\4aef6279552d6c53f4457cbee4e7b68d\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\grine\.gradle\caches\transforms-3\e2e99e09eacefe843cda9335cf325d80\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\a114690112df47d20b9cde419f3d94a0\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\grine\.gradle\caches\transforms-3\9a7fdee68d77a1c9c5b82edbf3d64031\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\0f09e6d63964a0463b8b6cb2b0a074d1\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\3a55c8f44a38bb9cd3976ad4e706620d\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\2005a00e002c0d76ce7ceeb1e296fc10\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\45ea07205c59ad91840ba2f758997e3e\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\b9d15dc4b1e6dfdfd01db19cbe215ee9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\3d78300aa9f6b9e7f706fee8c4bf607a\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\5afdb7a9e3225a2d159cbfd1d80c41d3\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
+	package
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:3:5-30
+		INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:5:5-27:19
+INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:5:5-27:19
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\grine\.gradle\caches\transforms-3\368db397c8ede8bd40c3eaf441c03e12\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\grine\.gradle\caches\transforms-3\368db397c8ede8bd40c3eaf441c03e12\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\5919d6f3b072c353787092a577509d9d\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\5919d6f3b072c353787092a577509d9d\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.5.0] C:\Users\grine\.gradle\caches\transforms-3\48bd5157a68eef2b67cf5d91a668feec\transformed\core-1.5.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.5.0] C:\Users\grine\.gradle\caches\transforms-3\48bd5157a68eef2b67cf5d91a668feec\transformed\core-1.5.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\grine\.gradle\caches\transforms-3\e2e99e09eacefe843cda9335cf325d80\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\grine\.gradle\caches\transforms-3\e2e99e09eacefe843cda9335cf325d80\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.5.0] C:\Users\grine\.gradle\caches\transforms-3\48bd5157a68eef2b67cf5d91a668feec\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:11:9-41
+activity#com.example.as1.Activity2
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:12:9-14:40
+	android:exported
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:14:13-37
+	android:name
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:13:13-38
+activity#com.example.as1.CounterActivity
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:15:9-17:39
+	android:exported
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:17:13-36
+	android:name
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:16:13-44
+activity#com.example.as1.MainActivity
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:18:9-26:20
+	android:exported
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:20:13-36
+	android:name
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:19:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:24:17-77
+	android:name
+		ADDED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml:24:27-74
+uses-sdk
+INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml
+INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\grine\.gradle\caches\transforms-3\368db397c8ede8bd40c3eaf441c03e12\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\grine\.gradle\caches\transforms-3\368db397c8ede8bd40c3eaf441c03e12\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\5919d6f3b072c353787092a577509d9d\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\5919d6f3b072c353787092a577509d9d\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\grine\.gradle\caches\transforms-3\3f4136122474e4829de0d1a36888a144\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\grine\.gradle\caches\transforms-3\3f4136122474e4829de0d1a36888a144\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\c505788411d3b30a833a10b1e5489e6f\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\c505788411d3b30a833a10b1e5489e6f\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\grine\.gradle\caches\transforms-3\1aa7a1b850fe86da83affab0055974f1\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\grine\.gradle\caches\transforms-3\1aa7a1b850fe86da83affab0055974f1\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\grine\.gradle\caches\transforms-3\66192654c335d75151b9541027e1a8e6\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\grine\.gradle\caches\transforms-3\66192654c335d75151b9541027e1a8e6\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\grine\.gradle\caches\transforms-3\7fc1668234d1683a360a8a7ec547c401\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\grine\.gradle\caches\transforms-3\7fc1668234d1683a360a8a7ec547c401\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\09f9107f2fe6a89f47698b105045256b\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\09f9107f2fe6a89f47698b105045256b\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\539cac160dcd70d8f998164b92baf441\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\539cac160dcd70d8f998164b92baf441\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\33a74b882badc2c0dc115e74b7441e9a\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\33a74b882badc2c0dc115e74b7441e9a\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\grine\.gradle\caches\transforms-3\ec9f65414c323ae50ef51f0a946a84e9\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\grine\.gradle\caches\transforms-3\ec9f65414c323ae50ef51f0a946a84e9\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\deb2286bc1b569c4f031eb37823c59d4\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\deb2286bc1b569c4f031eb37823c59d4\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\88e2c72b6aa7da3f71bd21d6634b7af5\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\88e2c72b6aa7da3f71bd21d6634b7af5\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\e5942cb19c3823dc395d6ba9bc3405a9\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\e5942cb19c3823dc395d6ba9bc3405a9\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\17ace872848aaa1f84643ab4122b355b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\17ace872848aaa1f84643ab4122b355b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\dc9115a6ef418e2dcb4eb137d69609b8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\dc9115a6ef418e2dcb4eb137d69609b8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\5b74c0ab3b0d8fd82db672a9c1079b20\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\5b74c0ab3b0d8fd82db672a9c1079b20\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\2dd08da718f8f8f07fa372199e4680dc\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\2dd08da718f8f8f07fa372199e4680dc\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.5.0] C:\Users\grine\.gradle\caches\transforms-3\48bd5157a68eef2b67cf5d91a668feec\transformed\core-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.5.0] C:\Users\grine\.gradle\caches\transforms-3\48bd5157a68eef2b67cf5d91a668feec\transformed\core-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\da016614a09e9e778625eff0413090c8\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\da016614a09e9e778625eff0413090c8\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\529ca1e93db3ee10a013710a9c19aca2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\529ca1e93db3ee10a013710a9c19aca2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\a3748809c5b2bef9dff497c2ec4ca2d7\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\grine\.gradle\caches\transforms-3\a3748809c5b2bef9dff497c2ec4ca2d7\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\7e23e6ea4c377c23486cddaf23583ed0\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\7e23e6ea4c377c23486cddaf23583ed0\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\eb5bb9c2937f508c9ffbd0b0f9469447\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\eb5bb9c2937f508c9ffbd0b0f9469447\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\4aef6279552d6c53f4457cbee4e7b68d\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\4aef6279552d6c53f4457cbee4e7b68d\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\grine\.gradle\caches\transforms-3\e2e99e09eacefe843cda9335cf325d80\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\grine\.gradle\caches\transforms-3\e2e99e09eacefe843cda9335cf325d80\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\a114690112df47d20b9cde419f3d94a0\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\a114690112df47d20b9cde419f3d94a0\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\grine\.gradle\caches\transforms-3\9a7fdee68d77a1c9c5b82edbf3d64031\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\grine\.gradle\caches\transforms-3\9a7fdee68d77a1c9c5b82edbf3d64031\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\0f09e6d63964a0463b8b6cb2b0a074d1\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\grine\.gradle\caches\transforms-3\0f09e6d63964a0463b8b6cb2b0a074d1\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\3a55c8f44a38bb9cd3976ad4e706620d\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\grine\.gradle\caches\transforms-3\3a55c8f44a38bb9cd3976ad4e706620d\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\2005a00e002c0d76ce7ceeb1e296fc10\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\2005a00e002c0d76ce7ceeb1e296fc10\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\45ea07205c59ad91840ba2f758997e3e\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\45ea07205c59ad91840ba2f758997e3e\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\b9d15dc4b1e6dfdfd01db19cbe215ee9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\b9d15dc4b1e6dfdfd01db19cbe215ee9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\3d78300aa9f6b9e7f706fee8c4bf607a\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\3d78300aa9f6b9e7f706fee8c4bf607a\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\5afdb7a9e3225a2d159cbfd1d80c41d3\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\grine\.gradle\caches\transforms-3\5afdb7a9e3225a2d159cbfd1d80c41d3\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+	android:targetSdkVersion
+		INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\fall2023\coms309\ip_103\Experiments\willyg\experiment1\two_screen_counter\app\src\main\AndroidManifest.xml

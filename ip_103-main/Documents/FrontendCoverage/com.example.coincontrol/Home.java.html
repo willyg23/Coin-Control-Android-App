@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Home.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.coincontrol</a> &gt; <span class="el_source">Home.java</span></div><h1>Home.java</h1><pre class="source lang-java linenums">package com.example.coincontrol;
+
+import static java.lang.Math.round;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
+import com.example.coincontrol.api.ApiClientFactory;
+import com.example.coincontrol.api.ExpenseApi;
+import com.example.coincontrol.model.Expense;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+<span class="fc" id="L28">public class Home extends Fragment {</span>
+
+    private Button submitExpenseBtn;
+    private EditText insertExpenseTxt;
+    private TextView allowanceTxt;
+    private TextView savingsTxt;
+    private TextView allowanceAmount;
+    private TextView savingsAmount;
+    private ProgressBar allowanceBar;
+    private ProgressBar savingsBar;
+//    private String username;
+    private int userID;
+
+<span class="fc" id="L41">    private Expense expense = new Expense();</span>
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+<span class="fc" id="L45">        View view = inflater.inflate(R.layout.fragment_home, container, false);</span>
+
+<span class="fc" id="L47">        submitExpenseBtn = view.findViewById(R.id.submitExpenseBtnHP);</span>
+<span class="fc" id="L48">        insertExpenseTxt = view.findViewById(R.id.insertExpenseTxtHP);</span>
+<span class="fc" id="L49">        allowanceTxt = view.findViewById(R.id.allowanceTxtHP);</span>
+<span class="fc" id="L50">        savingsTxt = view.findViewById(R.id.savingsTxtHP);</span>
+<span class="fc" id="L51">        allowanceAmount = view.findViewById(R.id.allowanceAmountTxtHP);</span>
+<span class="fc" id="L52">        savingsAmount = view.findViewById(R.id.savingsAmountTxtHP);</span>
+<span class="fc" id="L53">        allowanceBar = view.findViewById(R.id.allowanceBarHP);</span>
+<span class="fc" id="L54">        savingsBar = view.findViewById(R.id.savingsBarHP);</span>
+
+        // Access the data from the main activity
+<span class="fc" id="L57">        Main main = (Main) getActivity();</span>
+<span class="fc" id="L58">        userID = main.getUserIDFromIntent();</span>
+
+<span class="fc" id="L60">        ExpenseApi expenseApi = ApiClientFactory.GetApiClientSeed().create(ExpenseApi.class);</span>
+
+<span class="fc" id="L62">        Call&lt;Expense&gt; getcall = expenseApi.GetUserExpensesByUsername(userID);</span>
+
+<span class="fc" id="L64">        getcall.enqueue(new Callback&lt;Expense&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;Expense&gt; call, Response&lt;Expense&gt; response) {
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">                if (response.isSuccessful()) {</span>
+<span class="fc" id="L68">                    expense = response.body();</span>
+//                    Toast.makeText(getActivity(), &quot;Welcome back!&quot;, Toast.LENGTH_LONG).show();
+<span class="fc" id="L70">                    allowanceBar.setMax((int) expense.getWeeklyAllowanceGoal());</span>
+<span class="fc" id="L71">                    allowanceBar.setProgress((int)expense.getTotalWeeklyExpenses());</span>
+<span class="fc" id="L72">                    savingsBar.setMax((int)expense.getWeeklySavingsGoal());</span>
+<span class="fc" id="L73">                    savingsBar.setProgress((int)expense.getTotalWeeklySavings());</span>
+
+<span class="fc" id="L75">                    allowanceAmount.setText(&quot;$&quot; + (Math.round(expense.getTotalWeeklyExpenses() * 100.0) / 100.0) + &quot; / $&quot;</span>
+<span class="fc" id="L76">                                                + (Math.round(expense.getWeeklyAllowanceGoal() * 100.0) / 100.0));</span>
+<span class="fc" id="L77">                    savingsAmount.setText(&quot;$&quot; + (Math.round(expense.getTotalWeeklySavings() * 100.0) / 100.0) + &quot; / $&quot;</span>
+<span class="fc" id="L78">                            + (Math.round(expense.getWeeklySavingsGoal() * 100.0) / 100.0));</span>
+                }
+<span class="fc" id="L80">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;Expense&gt; call, Throwable t) {
+<span class="nc" id="L84">                Log.e(&quot;GET CALL ERROR&quot;, t.getMessage());</span>
+<span class="nc" id="L85">                Toast.makeText(getActivity(), &quot;Error Getting Expense Info&quot;, Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L86">            }</span>
+        });
+
+<span class="fc" id="L89">        submitExpenseBtn.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">                if (insertExpenseTxt.getText().toString().isEmpty()) {</span>
+<span class="nc" id="L93">                    Toast.makeText(getActivity(), &quot;Please enter a valid number&quot;, Toast.LENGTH_LONG).show();</span>
+                } else
+                {
+<span class="fc" id="L96">                    double expenseAmount = Double.parseDouble(insertExpenseTxt.getText().toString());</span>
+<span class="fc" id="L97">                    expense.setExpenseAmount(expenseAmount);</span>
+<span class="fc" id="L98">                    Call&lt;ArrayList&gt; putcall = expenseApi.UpdateNumber(userID, expense);</span>
+
+<span class="fc" id="L100">                    putcall.enqueue(new Callback&lt;ArrayList&gt;() {</span>
+                        @Override
+                        public void onResponse(Call&lt;ArrayList&gt; call, Response&lt;ArrayList&gt; response) {
+<span class="pc bpc" id="L103" title="1 of 2 branches missed.">                            if (response.isSuccessful()) {</span>
+<span class="fc" id="L104">                                ArrayList&lt;Double&gt; expenseInfo = response.body();</span>
+<span class="pc bpc" id="L105" title="1 of 2 branches missed.">                                if (expenseInfo.get(0) &gt;= expenseAmount) {</span>
+<span class="fc" id="L106">                                    Toast.makeText(getActivity(), &quot;Expense submitted!&quot;, Toast.LENGTH_LONG).show();</span>
+<span class="fc" id="L107">                                    allowanceBar.setProgress((int)Math.round(expenseInfo.get(0)));</span>
+<span class="fc" id="L108">                                    allowanceAmount.setText(&quot;$&quot; + (Math.round(expenseInfo.get(0) * 100.0) / 100.0) + &quot;/&quot;</span>
+<span class="fc" id="L109">                                            + (Math.round(expense.getWeeklyAllowanceGoal() * 100.0) / 100.0));</span>
+<span class="fc" id="L110">                                    savingsBar.setProgress((int)Math.round(expenseInfo.get(1)));</span>
+<span class="fc" id="L111">                                    savingsAmount.setText(&quot;$&quot; + (Math.round(expenseInfo.get(1) * 100.0) / 100.0) + &quot;/&quot;</span>
+<span class="fc" id="L112">                                            + (Math.round(expense.getWeeklySavingsGoal() * 100.0) / 100.0));</span>
+                                } else {
+<span class="nc" id="L114">                                    Toast.makeText(getActivity(), &quot;Error submitting expense&quot;, Toast.LENGTH_LONG).show();</span>
+                                }
+                            }
+<span class="fc" id="L117">                        }</span>
+
+                        @Override
+                        public void onFailure(Call&lt;ArrayList&gt; call, Throwable t) {
+<span class="nc" id="L121">                            Log.e(&quot;Expense FAIL&quot;, t.getMessage());</span>
+<span class="nc" id="L122">                            Toast.makeText(getActivity(), &quot;Response failed&quot;, Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L123">                        }</span>
+                    });
+                }
+<span class="fc" id="L126">            }</span>
+        });
+
+<span class="fc" id="L129">        return view;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>Generated by the Android Gradle plugin 8.1.1</div></body></html>

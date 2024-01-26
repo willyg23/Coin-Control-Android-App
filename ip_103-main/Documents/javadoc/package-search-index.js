@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.example.coincontrol"},{"l":"com.example.coincontrol.api"},{"l":"com.example.coincontrol.model"}];updateSearchResults();
